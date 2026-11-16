@@ -1,0 +1,24 @@
+{
+  "app_version": "1.0.14.1 LAB",
+  "studio_version": "1.8.0",
+  "source_basename": "LoopingBR-Publisher-Hibrido-v1.0.14.1-LAB",
+  "source_zip_sha256": "b3e8acf02e54a1418c8c882ba150f14a2d06314c5f67671a746b444669a9a62e",
+  "kept": 46,
+  "removed_or_separated": [
+    "HISTORICO-TESTES-V1012.txt",
+    "TESTES-V1010.txt",
+    "LEIA-ME-PRIMEIRO.txt",
+    "LoopingBR-Publisher-Hybrid-Desktop-LAB.exe",
+    "TESTES-V1011.txt",
+    "HISTORICO-V109-MUDANCAS.txt",
+    "LoopingBR-Hybrid-Backend-LAB.exe",
+    "HISTORICO-README-V1012.md",
+    "TESTES-V1013.txt",
+    "README-V1014.md",
+    "HISTORICO-LEIA-ME-CORRECAO-V1091.txt",
+    "HISTORICO-TESTES-V109.txt",
+    "HISTORICO-TECNICO-V106.md",
+    "README-HIBRIDO.md",
+    "assets/__pycache__/publisher.cpython-313.pyc"
+  ]
+}

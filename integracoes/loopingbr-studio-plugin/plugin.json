@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "loopingbr-studio-publico",
+  "version": "1.8.0",
+  "description": "Crie thumbnails para YouTube com três conceitos editoriais, direções A/B/C, referências opcionais, aprovação antes da geração e arquivos individuais 16:9 ou 9:16.",
+  "author": {
+    "name": "LoopingBR"
+  },
+  "keywords": [
+    "youtube",
+    "thumbnails",
+    "criacao",
+    "design",
+    "imagens"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "LoopingBR Studio Público",
+        "shortDescription": "Crie thumbnails com direção",
+        "longDescription": "Assistente criativo de thumbnails para criadores de conteúdo. Propõe 3 conceitos, direções A/B/C, pesquisa quando disponível, permite referência opcional de rosto e ambiente, confirma cada escolha e gera imagens individuais em 16:9 ou 9:16, conforme as ferramentas disponíveis na conta.",
+        "developerName": "LoopingBR",
+        "category": "Other",
+        "capabilities": [],
+        "defaultPrompt": "Começar",
+        "logo": "./assets/logo.png",
+        "composerIcon": "./assets/composer-icon.png"
+      },
+      "publication": {
+        "release_notes": "Versão independente para distribuição baseada no fluxo editorial LoopingBR Studio v1.7.2; cada usuário usa sua própria conta e aprova as referências e o formato."
+      }
+    }
+  }
+}

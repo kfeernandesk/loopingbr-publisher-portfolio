@@ -1,0 +1,11 @@
+{
+  "video_drive_id": "SUBSTITUA_PELO_ID_DO_ARQUIVO_NO_DRIVE",
+  "thumbnail_drive_id": "",
+  "title": "Exemplo de publicação",
+  "description": "Publicação de demonstração.",
+  "visibility": "unlisted",
+  "made_for_kids": false,
+  "tipo": "video",
+  "confirm": "NAO_PUBLICAR",
+  "channel_name": "SEU_CANAL"
+}

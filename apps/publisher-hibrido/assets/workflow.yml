@@ -1,0 +1,37 @@
+name: LoopingBR Desktop - publicar pedido confirmado
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'publicacoes/aprovadas/*.json'
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: loopingbr-publisher-youtube
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar dependências
+        run: |
+          pip install -r requirements.txt
+          sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+      - name: Validar pedido, reservar execução e enviar vídeo
+        env:
+          GH_JOB_TOKEN: ${{ github.token }}
+          LOOPINGBR_BROKER_URL: ${{ secrets.LOOPINGBR_BROKER_URL }}
+          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
+        run: python publisher.py
