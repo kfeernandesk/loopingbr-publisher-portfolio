@@ -1,0 +1,35 @@
+name: Testes de codigo
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/publisher-hibrido
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: apps/publisher-hibrido/go.mod
+      - name: Testes Go
+        run: go test ./...
+      - name: Analise estatica Go
+        run: go vet ./...
+      - name: Compilar Desktop e backend (Linux, sem executar)
+        run: |
+          go build -o /tmp/loopingbr-desktop .
+          go build -o /tmp/loopingbr-backend ./backend
+      - name: Validar sintaxe Python do executor
+        run: python3 -m py_compile assets/publisher.py
+      - name: Checar arquivos de configuracao sensiveis
+        run: |
+          if find . -type f \( -name '*.env' -o -name 'state.json' -o -name 'admin.key' \) | grep -q .; then
+            echo 'Arquivos locais de credenciais nao devem ser versionados'; exit 1
+          fi
