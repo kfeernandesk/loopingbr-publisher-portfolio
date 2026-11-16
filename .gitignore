@@ -1,0 +1,38 @@
+# Credenciais e perfis de usuario
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+client_secret*.json
+credentials*.json
+token*.json
+state.json
+config.local.json
+admin.key
+*.dpapi
+
+# Artefatos locais / temporarios
+__pycache__/
+*.pyc
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Builds: sao disponibilizados separadamente
+*.exe
+*.msi
+*.dll
+/dist/
+/build/
+/bin/
+
+# Pedidos reais de publicacao e resultados do usuario
+publicacoes/aprovadas/*.json
+publicacoes/resultados/*.json
+publicacoes/arquivadas/*.json
